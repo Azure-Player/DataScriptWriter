@@ -1,0 +1,5 @@
+﻿SQLPlayer Data Script Writer - Changes Log
+==========================================
+
+ver.2.0 @ 02/04/2018
+The application has been built.
