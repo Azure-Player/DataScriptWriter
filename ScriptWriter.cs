@@ -123,12 +123,15 @@ namespace DataScriptWriter
                             v = "'" + row[col].ToString().Replace("'", "''") + "'";
                             break;
                         case "char":
-                        case "nchar":
                         case "varchar":
-                        case "nvarchar":
-                        case "sysname":
                         case "text":
                             v = "'" + row[col].ToString().Replace("'", "''") + "'";
+                            break;
+                        case "nchar":
+                        case "nvarchar":
+                        case "ntext":
+                        case "sysname":
+                            v = "N'" + row[col].ToString().Replace("'", "''") + "'";
                             break;
                         case "datetime":
                             v = String.Format("'{0:yyyyMMdd HH:mm:ss}'", row[col]);     //Lack of accuracy!
