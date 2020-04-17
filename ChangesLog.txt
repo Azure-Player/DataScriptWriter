@@ -1,5 +1,10 @@
 ﻿SQLPlayer Data Script Writer - Changes Log
 ==========================================
 
+ver.2.1 @ 17/04/2020
+- Added URL to project on GitHub 
+- Data type NTEXT is supported now
+- Unicode types (SYSNAME, NTEXT, NCHAR, NVARCHAR) values are correctly formatted with 'N' prefix
+
 ver.2.0 @ 02/04/2018
 The application has been built.
