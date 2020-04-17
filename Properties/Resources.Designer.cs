@@ -19,7 +19,7 @@ namespace DataScriptWriter.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -101,15 +101,18 @@ namespace DataScriptWriter.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WITH cc as ( 
+        ///   Looks up a localized string similar to DECLARE @Tablename nvarchar(100) = &apos;{0}&apos;;
+        ///DECLARE @oid BIGINT = (
+        ///SELECT o.object_id from sys.objects o
+        ///INNER JOIN sys.schemas s on s.schema_id = o.schema_id
+        ///WHERE o.name = parsename(@TableName, 1) and s.name = parsename(@TableName, 2)
+        ///);
+        ///WITH cc as ( 
         ///    SELECT c.name as COLUMN_NAME, c.is_identity from sys.objects o  
         ///    INNER JOIN sys.columns c ON c.object_id = o.object_id 
-        ///    WHERE o.object_id = OBJECT_ID(parsename(@TableName, 1)) and o.schema_id = SCHEMA_ID(parsename(@TableName, 2)) 
+        ///    WHERE o.object_id = @oid 
         ///) 
-        ///select 	c.ORDINAL_POSITION, c.COLUMN_NAME, c.DATA_TYPE, co.constraint_type, quotename(c.COLUMN_NAME) as Q_COLUMN_NAME, cc.is_identity 
-        ///from    information_schema.columns c 
-        ///LEFT JOIN ( 
-        ///	select  tc.TABLE_SCHEMA, tc.TABLE_NAME, kcu.COLUMN_NAME,  [rest of string was truncated]&quot;;.
+        ///select 	c.ORDINAL_POSITION, c.COLUMN_NAME, c.DATA_TYPE, co.constraint_type, quotename(c [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string LoadColumnInfo {
             get {
