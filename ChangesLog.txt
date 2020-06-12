@@ -1,6 +1,9 @@
 ﻿SQLPlayer Data Script Writer - Changes Log
 ==========================================
 
+ver.2.2 @ 12/06/2020
+- Support for Binary and Varbinary
+
 ver.2.1 @ 17/04/2020
 - Added URL to project on GitHub 
 - Data type NTEXT is supported now
