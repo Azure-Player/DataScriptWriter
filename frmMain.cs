@@ -33,7 +33,7 @@ namespace DataScriptWriter
 
         private void Connect()
         {
-            ConnectDbForm f = new ConnectDbForm("SQLPlayer", "Data Generator");
+            ConnectDbForm f = new ConnectDbForm("SQLPlayer", "Data Script Writer");
             f.ShowDialog();
             if (f.DialogResult == DialogResult.OK)
             {

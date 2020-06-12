@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SQLPlayer")]
 [assembly: AssemblyProduct("Data Script Writer")]
-[assembly: AssemblyCopyright("Copyright © Kamil Nowinski 2018")]
+[assembly: AssemblyCopyright("Copyright © Kamil Nowinski 2018-2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
