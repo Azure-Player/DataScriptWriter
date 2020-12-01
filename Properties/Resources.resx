@@ -139,7 +139,7 @@
     FROM sys.tables t (NOLOCK)
     INNER JOIN sys.schemas s (NOLOCK) ON s.schema_id = t.schema_id
 	INNER JOIN sys.partitions p (NOLOCK) ON p.object_id = t.object_id
-    WHERE t.is_ms_shipped = 0 
+    WHERE t.is_ms_shipped = 0  and p.index_id &lt;= 1
     )
 SELECT SchemaName, TableName, SUM(rows) AS RowCnt
 FROM tbs
