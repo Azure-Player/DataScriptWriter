@@ -121,6 +121,27 @@ namespace DataScriptWriter.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DECLARE @Tablename nvarchar(100) = &apos;{0}&apos;;
+        ///DECLARE @oid BIGINT = (
+        ///SELECT o.object_id from sys.objects o
+        ///INNER JOIN sys.schemas s on s.schema_id = o.schema_id
+        ///WHERE o.name = parsename(@TableName, 1) and s.name = parsename(@TableName, 2)
+        ///);
+        ///WITH cc as ( 
+        ///    SELECT c.name as COLUMN_NAME, c.is_identity, c.generated_always_type
+        ///	from sys.objects o  
+        ///    INNER JOIN sys.columns c ON c.object_id = o.object_id 
+        ///    WHERE o.object_id = @oid 
+        ///) 
+        ///select 	c.ORDINAL_POSITION, c.COLUMN_NAME, c.DATA_TYPE, co.c [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string LoadColumnInfo2016andLater {
+            get {
+                return ResourceManager.GetString("LoadColumnInfo2016andLater", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ;WITH tbs AS
         ///    (
         ///    SELECT s.name AS SchemaName,
@@ -129,7 +150,7 @@ namespace DataScriptWriter.Properties {
         ///    FROM sys.tables t (NOLOCK)
         ///    INNER JOIN sys.schemas s (NOLOCK) ON s.schema_id = t.schema_id
         ///	INNER JOIN sys.partitions p (NOLOCK) ON p.object_id = t.object_id
-        ///    WHERE t.is_ms_shipped = 0 
+        ///    WHERE t.is_ms_shipped = 0  and p.index_id &lt;= 1
         ///    )
         ///SELECT SchemaName, TableName, SUM(rows) AS RowCnt
         ///FROM tbs
