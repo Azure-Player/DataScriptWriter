@@ -21,7 +21,7 @@ namespace DataScriptWriter
         {
             _db = db;
             _OutputFolder = outputFolder;
-            string sql = "SELECT @@SPID AS SPID, SUSER_NAME() AS UserName, DB_NAME() AS DbName, @@SERVERNAME AS ServerName;";
+            string sql = "SELECT @@SPID AS SPID, SUSER_NAME() AS UserName, DB_NAME() AS DbName, @@SERVERNAME AS ServerName, @@VERSION as ServerVersion;";
             _ServerInfoRow = _db.SelectRow(sql);
             InitTable();
         }
@@ -88,10 +88,17 @@ namespace DataScriptWriter
 
         private DataTable LoadColumnsInfo(ScriptObject so)
         {
-            string sql = Properties.Resources.ResourceManager.GetString("LoadColumnInfo");
+            string queryDef = "LoadColumnInfo";
+            if (IsSQLServer2016orLater()) queryDef = "LoadColumnInfo2016andLater";
+            string sql = Properties.Resources.ResourceManager.GetString(queryDef);
             sql = sql.Replace("{0}", so.FullName);
             DataTable dt = _db.SelectTable(sql, "ColumnInfo");
             return dt;
+        }
+
+        private bool IsSQLServer2016orLater()
+        {
+            return (this.ServerVersion.StartsWith("Microsoft SQL Azure") || this.ServerVersion.CompareTo("Microsoft SQL Server 2016") > 0);
         }
 
         private StringBuilder SerializeRowValues(DataRow row, DataTable colInfoTable, string prefix, string suffix)
@@ -286,7 +293,7 @@ namespace DataScriptWriter
             bool useIdentity = hasIdentity(colInfoTable);
 
             w.WriteLine(String.Format("IF OBJECT_ID('tempdb.dbo.{0}') IS NOT NULL DROP TABLE {0};", tmpTableName));
-            w.WriteLine(String.Format("SELECT * INTO {1} FROM {0} WHERE 0=1;", so.FullQuoted, tmpTableName));
+            w.WriteLine(String.Format("SELECT {2} INTO {1} FROM {0} WHERE 0=1;", so.FullQuoted, tmpTableName, colList));
             w.WriteLine(_BatchSeparator);
 
             if (useIdentity)
@@ -439,6 +446,14 @@ namespace DataScriptWriter
             get
             {
                 return _ServerInfoRow["ServerName"].ToString();
+            }
+        }
+
+        public string ServerVersion
+        {
+            get
+            {
+                return _ServerInfoRow["ServerVersion"].ToString();
             }
         }
 
