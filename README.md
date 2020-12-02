@@ -9,3 +9,7 @@ https://github.com/SQLPlayer/DataScriptWriter/releases/
 Blog post & video:
 - [Script and deploy the data for database from SSDT project](https://sqlplayer.net/2019/10/script-deploy-the-data-for-database-from-ssdt-project/)
 - [SSDT: Scripting static data from SQL Server (video)](https://sqlplayer.net/2020/04/ssdt-scripting-static-data-from-sql-server-video/)
+
+
+# Screenshot
+![](.\images\data-script-writer-selecting.png)
