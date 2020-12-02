@@ -12,4 +12,4 @@ Blog post & video:
 
 
 # Screenshot
-![](.\images\data-script-writer-selecting.png)
+![](./images/data-script-writer-selecting.png)
