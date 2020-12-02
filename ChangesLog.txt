@@ -1,6 +1,11 @@
 ﻿SQLPlayer Data Script Writer - Changes Log
 ==========================================
 
+ver.2.3 @ 02/12/2020
+- Support for Temporal tables (#10)
+- Support for Time data type (#14)
+- Fixed: Showing the wrong number of rows in a table (#12)
+
 ver.2.2 @ 12/06/2020
 - Support for Binary and Varbinary
 
