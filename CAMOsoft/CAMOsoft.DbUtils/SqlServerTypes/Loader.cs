@@ -21,12 +21,12 @@ namespace SqlServerTypes
         /// </param>
         public static void LoadNativeAssemblies(string rootApplicationPath)
         {
-            var nativeBinaryPath = IntPtr.Size > 4
-                ? Path.Combine(rootApplicationPath, @"SqlServerTypes\x64\")
-                : Path.Combine(rootApplicationPath, @"SqlServerTypes\x86\");
+            //var nativeBinaryPath = IntPtr.Size > 4
+            //    ? Path.Combine(rootApplicationPath, @"RequiredDLL\x64\")
+            //    : Path.Combine(rootApplicationPath, @"RequiredDLL\x86\");
 
-            LoadNativeAssembly(nativeBinaryPath, "msvcr120.dll");
-            LoadNativeAssembly(nativeBinaryPath, "SqlServerSpatial140.dll");
+            //LoadNativeAssembly(nativeBinaryPath, "msvcr120.dll");
+            //LoadNativeAssembly(nativeBinaryPath, "SqlServerSpatial140.dll");
         }
 
         private static void LoadNativeAssembly(string nativeBinaryPath, string assemblyName)
