@@ -42,59 +42,14 @@
     <ApplicationIcon>Resources\if_Archive_box_data_file_storage_1886362.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.BonusSkins.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.CodeParser.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.CodeParser.v18.2.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.Data.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.DataAccess.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.DataAccess.v18.2.UI, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.DataAccess.v18.2.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.DemoData.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.DemoData.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.DemoData.v18.2.Core, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.DemoData.v18.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Diagram.v18.2.Core, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.Diagram.v18.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Dialogs.v18.2.Core, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.Dialogs.v18.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Docs.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.Docs.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Images.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.Images.v18.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.Office.v18.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.Pdf.v18.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Pdf.v18.2.Drawing, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.Pdf.v18.2.Drawing.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.PivotGrid.v18.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.Printing.v18.2.Core.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.RichEdit.v18.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.RichEdit.v18.2.Export.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Utils.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.Utils.v18.2.dll</HintPath>
@@ -105,38 +60,8 @@
     <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraBars.v18.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraCharts.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraCharts.v18.2.Extensions, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraCharts.v18.2.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraCharts.v18.2.UI, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraCharts.v18.2.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraCharts.v18.2.Web, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraCharts.v18.2.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraCharts.v18.2.Wizard, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraCharts.v18.2.Wizard.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraDiagram.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraDiagram.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraDialogs.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraDialogs.v18.2.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraEditors.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraGauges.v18.2.Core, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraGauges.v18.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraGauges.v18.2.Presets, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraGauges.v18.2.Presets.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraGauges.v18.2.Win, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraGauges.v18.2.Win.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraGrid.v18.2.dll</HintPath>
@@ -144,83 +69,11 @@
     <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraLayout.v18.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraMap.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraMap.v18.2.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.XtraNavBar.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraNavBar.v18.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraPdfViewer.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraPdfViewer.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraPivotGrid.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraPivotGrid.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraPrinting.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraReports.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2.CodeCompletion, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraReports.v18.2.CodeCompletion.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2.Extensions, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraReports.v18.2.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2.Service, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraReports.v18.2.Service.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2.Web, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraReports.v18.2.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2.Web.Azure, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraReports.v18.2.Web.Azure.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2.Web.WebForms, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraReports.v18.2.Web.WebForms.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraRichEdit.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v18.2.Extensions, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraRichEdit.v18.2.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraScheduler.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraScheduler.v18.2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v18.2.Extensions, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraScheduler.v18.2.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v18.2.GoogleCalendar, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraScheduler.v18.2.GoogleCalendar.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v18.2.Reporting, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraScheduler.v18.2.Reporting.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v18.2.Reporting.Extensions, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraScheduler.v18.2.Reporting.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraSpellChecker.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraSpellChecker.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraSpreadsheet.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraSpreadsheet.v18.2.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraTreeList.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraTreeMap.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraTreeMap.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraVerticalGrid.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraVerticalGrid.v18.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraWizard.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>packages\XtraEditor.Controls.18.2.4\lib\net45\DevExpress.XtraWizard.v18.2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
@@ -279,7 +132,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
