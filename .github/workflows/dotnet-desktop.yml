@@ -64,12 +64,12 @@ jobs:
       with:
         fetch-depth: 0
 
-    - uses: NuGetToolInstaller@0
+    - uses: microsoft/NuGetToolInstaller@0
       name: 'Use NuGet 4.4.1'
       with:
         versionSpec: 4.4.1
 
-    - uses: NuGetCommand@2
+    - uses: microsoft/NuGetCommand@2
       name: 'NuGet restore'
       with:
         restoreSolution: '$(Parameters.solution)'
