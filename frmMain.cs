@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Diagnostics;
+using Ionic.Zip;
 
 namespace DataScriptWriter
 {
@@ -23,7 +25,10 @@ namespace DataScriptWriter
             Global.AppName = String.Format("{0} - ver. {1}", fileVersionInfo.ProductName, fileVersionInfo.ProductVersion);
             this.Text = Global.AppName;
 
-            _OutputFolder = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
+            string strTempPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
+            Directory.CreateDirectory(strTempPath);
+
+            _OutputFolder = strTempPath;
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -47,6 +52,11 @@ namespace DataScriptWriter
 
         private void bbiExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            try
+            {
+                Directory.Delete(_OutputFolder, true);
+            }
+            catch { }
             this.Close();
         }
 
@@ -65,15 +75,31 @@ namespace DataScriptWriter
         private void bbiScript_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int cnt = 0;
-            foreach (DataRowView item in _gen.SelectedItemView)
+            if (_gen == null || _gen.SelectedItemView == null)
             {
-                ScriptObject so = new ScriptObject(item);
-                barStaticItem1.Caption = "Scripting: " + so.FullQuoted;
-                this.Refresh();
-                _gen.GenerateForTable(so);
-                cnt++;
+                barStaticItem1.Caption = "Incomplete connection to script";
             }
-            barStaticItem1.Caption = String.Format("Done. {0} tables were scripted.", cnt);
+            else
+            {
+                foreach (DataRowView item in _gen.SelectedItemView)
+                {
+                    ScriptObject so = new ScriptObject(item);
+                    barStaticItem1.Caption = "Scripting: " + so.FullQuoted;
+                    this.Refresh();
+                    _gen.GenerateForTable(so);
+                    cnt++;
+                }
+                barStaticItem1.Caption = String.Format("Done. {0} tables were scripted.", cnt);
+
+                string[] arrSqlFiles = Directory.GetFiles(_OutputFolder, "*.sql");
+                string strZipPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "DataScriptWriter");
+                Directory.CreateDirectory(strZipPath);
+
+                ZipFile zipFile = new ZipFile(_OutputFolder);
+                zipFile.AddFiles(arrSqlFiles, "/");
+                zipFile.Save(Path.Combine(strZipPath,  string.Format("Export_{0}" + ".zip",DateTime.Now.ToString("yyyyMMdd HHmmss"))));
+                zipFile = null;
+            }
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
