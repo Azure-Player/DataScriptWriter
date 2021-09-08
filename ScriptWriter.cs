@@ -189,6 +189,9 @@ namespace DataScriptWriter
                         case "varbinary":
                             v = "0x" + ByteArrayToHex((byte[])row[col]);
                             break;
+                        case "datetimeoffset":
+                            v = String.Format("'{0:yyyyMMdd HH:mm:ss.fffffff} {1}'", row[col], row[col].ToString().Substring(row[col].ToString().Length - 6));
+                            break;
                         default:
                             throw new Exception("Unknown SQL data type! (" + sqltype + ")");
                     }
@@ -445,6 +448,15 @@ namespace DataScriptWriter
             w.WriteLine("");
             w.WriteLine("END");
             w.WriteLine(_BatchSeparator);
+        }
+
+
+        public string OutputFolder
+        {
+            get
+            {
+                return _OutputFolder;
+            }
         }
 
 
