@@ -108,11 +108,12 @@ namespace DataScriptWriter.Properties {
         ///WHERE o.name = parsename(@TableName, 1) and s.name = parsename(@TableName, 2)
         ///);
         ///WITH cc as ( 
-        ///    SELECT c.name as COLUMN_NAME, c.is_identity from sys.objects o  
+        ///    SELECT c.name as COLUMN_NAME, c.is_identity, c.is_computed
+        ///   FROM sys.objects o  
         ///    INNER JOIN sys.columns c ON c.object_id = o.object_id 
         ///    WHERE o.object_id = @oid 
         ///) 
-        ///select 	c.ORDINAL_POSITION, c.COLUMN_NAME, c.DATA_TYPE, co.constraint_type, quotename(c [rest of string was truncated]&quot;;.
+        ///select 	c.ORDINAL_POSITION, c.COLUMN_NAME, c.DATA_TYPE, co.constrain [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string LoadColumnInfo {
             get {
@@ -128,12 +129,12 @@ namespace DataScriptWriter.Properties {
         ///WHERE o.name = parsename(@TableName, 1) and s.name = parsename(@TableName, 2)
         ///);
         ///WITH cc as ( 
-        ///    SELECT c.name as COLUMN_NAME, c.is_identity, c.generated_always_type
+        ///    SELECT c.name as COLUMN_NAME, c.is_identity, c.generated_always_type, c.is_computed
         ///	from sys.objects o  
         ///    INNER JOIN sys.columns c ON c.object_id = o.object_id 
         ///    WHERE o.object_id = @oid 
         ///) 
-        ///select 	c.ORDINAL_POSITION, c.COLUMN_NAME, c.DATA_TYPE, co.c [rest of string was truncated]&quot;;.
+        ///select 	c.ORDINAL_POSITION, c.COLUMN_NAME, c. [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string LoadColumnInfo2016andLater {
             get {

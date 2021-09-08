@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
 using System.Text;
 using System.Data;
 using System.IO;
@@ -16,6 +18,8 @@ namespace DataScriptWriter
         DataView _dv;
         public bool OptionProcWrapUp = false;
         private string _BatchSeparator = "GO";
+        private List<string> _excludeDataTypes = new List<string>();
+
 
         public ScriptWriter(CAMOsoft.DbUtils.MsSqlSession db, string outputFolder)
         {
@@ -23,6 +27,10 @@ namespace DataScriptWriter
             _OutputFolder = outputFolder;
             string sql = "SELECT @@SPID AS SPID, SUSER_NAME() AS UserName, DB_NAME() AS DbName, @@SERVERNAME AS ServerName, @@VERSION as ServerVersion;";
             _ServerInfoRow = _db.SelectRow(sql);
+
+            if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings["excludeDataTypes"]))
+                _excludeDataTypes = new List<string>(ConfigurationManager.AppSettings["excludeDataTypes"].Split(new char[] { ';' }));
+
             InitTable();
         }
 
@@ -93,7 +101,20 @@ namespace DataScriptWriter
             string sql = Properties.Resources.ResourceManager.GetString(queryDef);
             sql = sql.Replace("{0}", so.FullName);
             DataTable dt = _db.SelectTable(sql, "ColumnInfo");
-            return dt;
+            string filter = string.Empty;
+
+            if(_excludeDataTypes.Count >= 1)
+                filter = string.Format("DATA_TYPE NOT in ({0})", string.Join(",", _excludeDataTypes.Select(x => string.Format("'{0}'", x))));
+
+            var filteredDr = dt.Select(filter);
+            var filteredDt = new DataTable();
+
+            if (filteredDr.Length != 0)
+                filteredDt = filteredDr.CopyToDataTable();
+            filteredDt.TableName = dt.TableName;
+
+            return filteredDt;
+
         }
 
         private bool IsSQLServer2016orLater()
@@ -167,6 +188,9 @@ namespace DataScriptWriter
                         case "binary":
                         case "varbinary":
                             v = "0x" + ByteArrayToHex((byte[])row[col]);
+                            break;
+                        case "datetimeoffset":
+                            v = String.Format("'{0:yyyyMMdd HH:mm:ss.fffffff} {1}'", row[col], row[col].ToString().Substring(row[col].ToString().Length - 6));
                             break;
                         default:
                             throw new Exception("Unknown SQL data type! (" + sqltype + ")");
@@ -424,6 +448,15 @@ namespace DataScriptWriter
             w.WriteLine("");
             w.WriteLine("END");
             w.WriteLine(_BatchSeparator);
+        }
+
+
+        public string OutputFolder
+        {
+            get
+            {
+                return _OutputFolder;
+            }
         }
 
 

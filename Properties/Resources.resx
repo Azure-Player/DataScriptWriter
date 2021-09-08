@@ -153,7 +153,8 @@ INNER JOIN sys.schemas s on s.schema_id = o.schema_id
 WHERE o.name = parsename(@TableName, 1) and s.name = parsename(@TableName, 2)
 );
 WITH cc as ( 
-    SELECT c.name as COLUMN_NAME, c.is_identity from sys.objects o  
+    SELECT c.name as COLUMN_NAME, c.is_identity, c.is_computed
+   FROM sys.objects o  
     INNER JOIN sys.columns c ON c.object_id = o.object_id 
     WHERE o.object_id = @oid 
 ) 
@@ -163,6 +164,7 @@ LEFT JOIN (
 	select  tc.TABLE_SCHEMA, tc.TABLE_NAME, kcu.COLUMN_NAME, tc.constraint_type 
 	from    information_schema.table_constraints tc 
 	join    information_schema.key_column_usage kcu on 
+			tc.table_schema = kcu.table_schema and 
 			tc.table_name = kcu.table_name and 
 			tc.constraint_name = kcu.constraint_name 
 	where   tc.table_name = parsename(@TableName, 1) and 
@@ -171,7 +173,8 @@ LEFT JOIN (
 ) as co on co.TABLE_SCHEMA = c.TABLE_SCHEMA and co.TABLE_NAME = c.TABLE_NAME and co.COLUMN_NAME = c.COLUMN_NAME 
 LEFT JOIN cc ON cc.COLUMN_NAME = c.COLUMN_NAME 
 where   c.table_name = parsename(@TableName, 1) and 
-		c.table_schema = parsename(@TableName, 2) ;</value>
+c.table_schema = parsename(@TableName, 2)
+and cc.is_computed = 0</value>
   </data>
   <data name="LoadColumnInfo2016andLater" xml:space="preserve">
     <value>DECLARE @Tablename nvarchar(100) = '{0}';
@@ -181,7 +184,7 @@ INNER JOIN sys.schemas s on s.schema_id = o.schema_id
 WHERE o.name = parsename(@TableName, 1) and s.name = parsename(@TableName, 2)
 );
 WITH cc as ( 
-    SELECT c.name as COLUMN_NAME, c.is_identity, c.generated_always_type
+    SELECT c.name as COLUMN_NAME, c.is_identity, c.generated_always_type, c.is_computed
 	from sys.objects o  
     INNER JOIN sys.columns c ON c.object_id = o.object_id 
     WHERE o.object_id = @oid 
@@ -192,6 +195,7 @@ LEFT JOIN (
 	select  tc.TABLE_SCHEMA, tc.TABLE_NAME, kcu.COLUMN_NAME, tc.constraint_type 
 	from    information_schema.table_constraints tc 
 	join    information_schema.key_column_usage kcu on 
+			tc.table_schema = kcu.table_schema and 
 			tc.table_name = kcu.table_name and 
 			tc.constraint_name = kcu.constraint_name 
 	where   tc.table_name = parsename(@TableName, 1) and 
@@ -200,7 +204,8 @@ LEFT JOIN (
 ) as co on co.TABLE_SCHEMA = c.TABLE_SCHEMA and co.TABLE_NAME = c.TABLE_NAME and co.COLUMN_NAME = c.COLUMN_NAME 
 LEFT JOIN cc ON cc.COLUMN_NAME = c.COLUMN_NAME 
 where   c.table_name = parsename(@TableName, 1) 
-and 	c.table_schema = parsename(@TableName, 2)
-and		cc.generated_always_type = 0</value>
+and c.table_schema = parsename(@TableName, 2)
+and cc.generated_always_type = 0
+and cc.is_computed = 0</value>
   </data>
 </root>

@@ -1,6 +1,13 @@
 ﻿SQLPlayer Data Script Writer - Changes Log
 ==========================================
 
+ver.2.4 @ 08/09/2021
+- Support for datetimeoffset type (#20)
+- Config data types to not be scripted (#20)
+- Fixed SQL reading structure of a table (#23)
+- Do not script calculated columns (#18)
+- Option to open target folder in Explorer
+
 ver.2.3 @ 02/12/2020
 - Support for Temporal tables (#10)
 - Support for Time data type (#14)

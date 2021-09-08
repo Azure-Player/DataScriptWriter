@@ -74,6 +74,11 @@ namespace DataScriptWriter
                 cnt++;
             }
             barStaticItem1.Caption = String.Format("Done. {0} tables were scripted.", cnt);
+            DialogResult r = MessageBox.Show(  "Do you want to open target location with File Explorer?", "Open target location", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
+            {
+                Process.Start("explorer.exe", _gen.OutputFolder);
+            }
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
