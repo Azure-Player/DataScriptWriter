@@ -1,5 +1,5 @@
 # Data Script Writer
-### current version: 2.3.0 ([download](https://github.com/SQLPlayer/DataScriptWriter/releases/download/v2.3/DataScriptWriter_v2.3.0.zip))
+### current version: 2.4.0 ([download](https://github.com/SQLPlayer/DataScriptWriter/releases/download/v2.4/DataScriptWriter_v2.4.0.zip))
 
 # Releases
 Releases & Application (binaries) can be downloaded from here:  
