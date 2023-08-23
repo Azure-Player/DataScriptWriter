@@ -19,6 +19,8 @@ namespace DataScriptWriter
         public bool OptionProcWrapUp = false;
         private string _BatchSeparator = "GO";
         private List<string> _excludeDataTypes = new List<string>();
+        private bool _sortColumnsByOrdinalPosition = false;
+        private bool _sortRowsByPrimaryKey = false;
 
 
         public ScriptWriter(CAMOsoft.DbUtils.MsSqlSession db, string outputFolder)
@@ -30,6 +32,12 @@ namespace DataScriptWriter
 
             if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings["excludeDataTypes"]))
                 _excludeDataTypes = new List<string>(ConfigurationManager.AppSettings["excludeDataTypes"].Split(new char[] { ';' }));
+
+            if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings["sortColumnsByOrdinalPosition"]))
+                bool.TryParse(ConfigurationManager.AppSettings["sortColumnsByOrdinalPosition"], out _sortColumnsByOrdinalPosition);
+
+            if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings["sortRowsByPrimaryKey"]))
+                bool.TryParse(ConfigurationManager.AppSettings["sortRowsByPrimaryKey"], out _sortRowsByPrimaryKey);
 
             InitTable();
         }
@@ -109,8 +117,13 @@ namespace DataScriptWriter
             var filteredDr = dt.Select(filter);
             var filteredDt = new DataTable();
 
-            if (filteredDr.Length != 0)
+            if (filteredDr.Length != 0) {
                 filteredDt = filteredDr.CopyToDataTable();
+                if (_sortColumnsByOrdinalPosition) {
+                    filteredDt.DefaultView.Sort = "ORDINAL_POSITION";
+                    filteredDt = filteredDt.DefaultView.ToTable();
+                }
+            }
             filteredDt.TableName = dt.TableName;
 
             return filteredDt;
@@ -316,6 +329,10 @@ namespace DataScriptWriter
             string tmpTableName = so.TempCounterpart;
             bool useIdentity = hasIdentity(colInfoTable);
 
+            if (_sortRowsByPrimaryKey) {
+                mainTable = DataTableSortedByPrimaryKey(colInfoTable, mainTable);
+            }
+
             w.WriteLine(String.Format("IF OBJECT_ID('tempdb.dbo.{0}') IS NOT NULL DROP TABLE {0};", tmpTableName));
             w.WriteLine(String.Format("SELECT {2} INTO {1} FROM {0} WHERE 0=1;", so.FullQuoted, tmpTableName, colList));
             w.WriteLine(_BatchSeparator);
@@ -406,6 +423,9 @@ namespace DataScriptWriter
         private void ScriptTableInitialInsert(ScriptObject so, DataTable colInfoTable, DataTable mainTable, System.IO.StreamWriter w, string colList, string scolList, string PKcolListOn)
         {
             bool useIdentity = hasIdentity(colInfoTable);
+            if (_sortRowsByPrimaryKey) {
+                mainTable = DataTableSortedByPrimaryKey(colInfoTable, mainTable);
+            }
 
             //Begin IF
             w.WriteLine(String.Format("IF NOT EXISTS (SELECT TOP (1) * FROM {0})", so.FullQuoted));
@@ -448,6 +468,13 @@ namespace DataScriptWriter
             w.WriteLine("");
             w.WriteLine("END");
             w.WriteLine(_BatchSeparator);
+        }
+
+        private DataTable DataTableSortedByPrimaryKey(DataTable colInfoTable, DataTable mainTable) {
+            var primaryKeyColumns = colInfoTable.Select("constraint_type = 'PRIMARY KEY'").Select(dr => dr["COLUMN_NAME"].ToString()).ToList();
+
+            mainTable.DefaultView.Sort = string.Join(", ", primaryKeyColumns);
+            return mainTable.DefaultView.ToTable();
         }
 
 
